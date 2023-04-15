@@ -2,7 +2,7 @@ resources:
 - name: repo
   type: git
   source:
-    url: https://github.com/simonkesh/concourse-journey.git
+    uri: https://github.com/simonkesh/concourse-journey.git
 
 jobs:
 - name: hello-world-job
