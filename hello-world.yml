@@ -21,6 +21,12 @@ jobs:
         source:
           repository: busybox # images are pulled from docker hub by default
           # The command Concourse will run inside a container is echo "Hello world!"
-      run:
-        path: echo
-        args: ["Hello World!"]
+      inputs: # Add the get step as an input to this task
+      - name: repo
+      run: # read the file from the get step
+        path: sh
+        args: 
+        - -cx
+        - |
+          ls -l .
+          cat repo/README.md
