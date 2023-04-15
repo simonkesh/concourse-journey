@@ -1,7 +1,15 @@
+resources:
+- name: repo
+  type: git
+  source:
+    url: https://github.com/simonkesh/concourse-journey.git
+
 jobs:
 - name: hello-world-job
   plan:
-  - task: hello-worl-task
+  # Add a get step referencing the resource
+  - get: repo
+  - task: hello-world-task
     config:
     # Tells Concourse which type of worker this task should run on
       platform: linux
