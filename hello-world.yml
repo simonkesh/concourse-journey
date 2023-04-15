@@ -9,6 +9,7 @@ jobs:
   plan:
   # Add a get step referencing the resource
   - get: repo
+      trigger: true # Tells Concourse to trigger this job when new versions are emitted / deployed
   - task: hello-world-task
     config:
     # Tells Concourse which type of worker this task should run on
