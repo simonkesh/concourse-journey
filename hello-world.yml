@@ -28,5 +28,5 @@ jobs:
         args: 
         - -cx
         - |
-          ls -l .
+          ls -la .
           cat repo/README.md
